@@ -1,0 +1,32 @@
++----------------+         +----------------+        +----------------+
+|  departments   | 1     n |     guides     | 1    n |    projects    |
+|----------------|---------|----------------|--------|----------------|
+| department_id PK         | guide_id PK                 | project_id PK
+| name                      | guide_name                 | title
+                            | department_id FK ----------| department_id FK
+                            | designation                | guide_id FK
+                            | password                   | member_type
+                            | created_at                 | project_type
+                                                         | description
+                                                         | created_at
+                                                               |
+                                                               | 1
+                                                               |    n
+                                               +--------------------------------+
+                                               |       project_students           |
+                                               |---------------------------------|
+                                               | project_student_id PK
+                                               | project_id FK -------------------+
++----------------+      n     1                | student_id FK
+|   students     |-----------------------------| assigned_at
+|----------------|
+| student_id PK  |                                 +----------------+
+| roll_number     |                                 | internships   |
+| name            |                                 |--------------|
+| department_id FK| n      1                        | internship_id PK
+| batch           |---------------------------------| project_id FK
+| password        |                                 | student_id FK
+| created_at      |                                 | company_name
+                                                     | duration
+                                                     | domain
+                                                     | created_at
